@@ -1,9 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main()
 {
 	/* Variáveis */
-	int numero_secreto = 42;
+	srand(time(0)); /* Gera uma seed baseada no tempo */
+	int numero_secreto = rand() % 100; /* Pega o resto da divisão de 100 */
 	int chute = 0;
 
 	int contador_tentativas = 1;
