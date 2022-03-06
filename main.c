@@ -13,14 +13,13 @@ int main()
 	int numero_tentativas = 6;
 	int dificuldade = 0;
 
+	int pontos = 100;
 	int acertou = 0;
 
 	/* Cabeçalho do Jogo */
 	printf("*************************************\n");
 	printf("* Bem vindo ao Jogo de Adivinhação! *\n");
-	printf("*************************************\n");
-
-	printf("\n");
+	printf("*************************************\n\n");
 
 	/* Seleciona dificuldade */
 	printf("******* Dificuldades *******\n");
@@ -69,12 +68,14 @@ int main()
 		else if (chute < numero_secreto)
 			printf("Seu chute foi MENOR do que o número gerado!\n\n");
 
+		pontos -= abs(numero_secreto - chute) / 2;
 		contador_tentativas++;
 	}
 
 	if (acertou)
 	{
 		printf("\nParabéns!\n");
+		printf("Seu total de pontos é de %d!\n", pontos);
 		printf("Você acertou em %d tentativas de %d!\n", contador_tentativas, numero_tentativas);
 	}
 	else
