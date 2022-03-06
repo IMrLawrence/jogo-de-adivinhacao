@@ -56,6 +56,12 @@ int main()
 		printf("Digite seu chute: ");
 		scanf("%d", &chute);
 
+		if (chute <= 0)
+		{
+			printf("Você não pode chutar número negativos!\n\n");
+			continue;
+		}
+
 		acertou = chute == numero_secreto;
 
 		/* Se tiver acertado*/
